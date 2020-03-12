@@ -1,0 +1,109 @@
+/*表： matchedlog*/-------------------
+
+/*列信息*/-----------
+
+Field          Type          Collation        Null    Key     Default  Extra           Privileges                       Comment  
+-------------  ------------  ---------------  ------  ------  -------  --------------  -------------------------------  ---------
+id             int(20)       (NULL)           NO      PRI     (NULL)   auto_increment  select,insert,update,references           
+name           varchar(20)   utf8_general_ci  YES             (NULL)                   select,insert,update,references           
+LogInTime      varchar(20)   utf8_general_ci  YES             (NULL)                   select,insert,update,references           
+LogInAddress   varchar(100)  utf8_general_ci  YES             (NULL)                   select,insert,update,references           
+LogInIP        varchar(50)   utf8_general_ci  YES             (NULL)                   select,insert,update,references           
+INMatched      varchar(10)   utf8_general_ci  YES             (NULL)                   select,insert,update,references           
+LogOutTime     varchar(20)   utf8_general_ci  YES             (NULL)                   select,insert,update,references           
+LogOutAddress  varchar(100)  utf8_general_ci  YES             (NULL)                   select,insert,update,references           
+LogOutIP       varchar(50)   utf8_general_ci  YES             (NULL)                   select,insert,update,references           
+OutMatched     varchar(10)   utf8_general_ci  YES             (NULL)                   select,insert,update,references           
+
+/*索引信息*/--------------
+
+Table       Non_unique  Key_name  Seq_in_index  Column_name  Collation  Cardinality  Sub_part  Packed  Null    Index_type  Comment  Index_comment  
+----------  ----------  --------  ------------  -----------  ---------  -----------  --------  ------  ------  ----------  -------  ---------------
+matchedlog           0  PRIMARY              1  id           A                    5    (NULL)  (NULL)          BTREE                               
+
+/*DDL 信息*/------------
+
+CREATE TABLE `matchedlog` (
+  `id` int(20) NOT NULL AUTO_INCREMENT,
+  `name` varchar(20) DEFAULT NULL,
+  `LogInTime` varchar(20) DEFAULT NULL,
+  `LogInAddress` varchar(100) DEFAULT NULL,
+  `LogInIP` varchar(50) DEFAULT NULL,
+  `INMatched` varchar(10) DEFAULT NULL,
+  `LogOutTime` varchar(20) DEFAULT NULL,
+  `LogOutAddress` varchar(100) DEFAULT NULL,
+  `LogOutIP` varchar(50) DEFAULT NULL,
+  `OutMatched` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB AUTO_INCREMENT=2019006 DEFAULT CHARSET=utf8
+
+
+
+/*表： matchedtrans*/---------------------
+
+/*列信息*/-----------
+
+Field      Type         Collation        Null    Key     Default  Extra   Privileges                       Comment  
+---------  -----------  ---------------  ------  ------  -------  ------  -------------------------------  ---------
+id         int(20)      (NULL)           NO      PRI     (NULL)           select,insert,update,references           
+receiver   varchar(50)  utf8_general_ci  YES             (NULL)           select,insert,update,references           
+Address    varchar(50)  utf8_general_ci  YES             (NULL)           select,insert,update,references           
+sendTime   varchar(50)  utf8_general_ci  YES             (NULL)           select,insert,update,references           
+transTime  varchar(50)  utf8_general_ci  YES             (NULL)           select,insert,update,references           
+signTime   varchar(50)  utf8_general_ci  YES             (NULL)           select,insert,update,references           
+handler    varchar(50)  utf8_general_ci  YES             (NULL)           select,insert,update,references           
+Matched    varchar(50)  utf8_general_ci  YES             (NULL)           select,insert,update,references           
+
+/*索引信息*/--------------
+
+Table         Non_unique  Key_name  Seq_in_index  Column_name  Collation  Cardinality  Sub_part  Packed  Null    Index_type  Comment  Index_comment  
+------------  ----------  --------  ------------  -----------  ---------  -----------  --------  ------  ------  ----------  -------  ---------------
+matchedtrans           0  PRIMARY              1  id           A                    5    (NULL)  (NULL)          BTREE                               
+
+/*DDL 信息*/------------
+
+CREATE TABLE `matchedtrans` (
+  `id` int(20) NOT NULL,
+  `receiver` varchar(50) DEFAULT NULL,
+  `Address` varchar(50) DEFAULT NULL,
+  `sendTime` varchar(50) DEFAULT NULL,
+  `transTime` varchar(50) DEFAULT NULL,
+  `signTime` varchar(50) DEFAULT NULL,
+  `handler` varchar(50) DEFAULT NULL,
+  `Matched` varchar(50) DEFAULT NULL,
+  PRIMARY KEY (`id`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+
+
+
+/*表： user_info*/------------------
+
+/*列信息*/-----------
+
+Field      Type          Collation        Null    Key     Default  Extra   Privileges                       Comment  
+---------  ------------  ---------------  ------  ------  -------  ------  -------------------------------  ---------
+username   varchar(100)  utf8_general_ci  NO      PRI     (NULL)           select,insert,update,references           
+password   varchar(100)  utf8_general_ci  YES             (NULL)           select,insert,update,references           
+sex        varchar(10)   utf8_general_ci  YES             (NULL)           select,insert,update,references           
+habits     varchar(20)   utf8_general_ci  YES             (NULL)           select,insert,update,references           
+address    varchar(100)  utf8_general_ci  YES             (NULL)           select,insert,update,references           
+education  varchar(10)   utf8_general_ci  YES             (NULL)           select,insert,update,references           
+
+/*索引信息*/--------------
+
+Table      Non_unique  Key_name  Seq_in_index  Column_name  Collation  Cardinality  Sub_part  Packed  Null    Index_type  Comment  Index_comment  
+---------  ----------  --------  ------------  -----------  ---------  -----------  --------  ------  ------  ----------  -------  ---------------
+user_info           0  PRIMARY              1  username     A                    1    (NULL)  (NULL)          BTREE                               
+
+/*DDL 信息*/------------
+
+CREATE TABLE `user_info` (
+  `username` varchar(100) NOT NULL,
+  `password` varchar(100) DEFAULT NULL,
+  `sex` varchar(10) DEFAULT NULL,
+  `habits` varchar(20) DEFAULT NULL,
+  `address` varchar(100) DEFAULT NULL,
+  `education` varchar(10) DEFAULT NULL,
+  PRIMARY KEY (`username`)
+) ENGINE=InnoDB DEFAULT CHARSET=utf8
+

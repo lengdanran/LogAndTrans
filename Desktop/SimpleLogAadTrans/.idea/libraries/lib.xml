@@ -1,0 +1,11 @@
+<component name="libraryTable">
+  <library name="lib">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/lib/mysql-connector-java-8.0.18.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/JTattoo-1.6.13.jar!/" />
+      <root url="jar://$PROJECT_DIR$/lib/beautyeye_lnf.jar!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>
